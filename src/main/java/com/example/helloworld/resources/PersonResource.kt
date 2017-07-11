@@ -5,6 +5,7 @@ import com.example.helloworld.db.PersonDAO
 import com.example.helloworld.views.PersonView
 import io.dropwizard.hibernate.UnitOfWork
 import io.dropwizard.jersey.params.LongParam
+import org.slf4j.LoggerFactory
 
 import javax.ws.rs.GET
 import javax.ws.rs.NotFoundException

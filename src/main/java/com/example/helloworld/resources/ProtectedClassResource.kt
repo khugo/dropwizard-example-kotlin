@@ -25,21 +25,21 @@ class ProtectedClassResource {
     @PermitAll
     @Path("guest")
     fun showSecret(@Auth user: User): String {
-        return String.format("Hey there, %s. You know the secret! %d", user.name, user.id)
+        return String.format("Hey there, %s. You know the secret! %d", user.name, user.getId())
     }
 
     /* Access to this method is authorized by the class level annotation */
     @GET
     fun showBasicUserSecret(@Context context: SecurityContext): String {
         val user = context.userPrincipal as User
-        return String.format("Hey there, %s. You seem to be a basic user. %d", user.name, user.id)
+        return String.format("Hey there, %s. You seem to be a basic user. %d", user.name, user.getId())
     }
 
     @GET
     @RolesAllowed("ADMIN")
     @Path("admin")
     fun showAdminSecret(@Auth user: User): String {
-        return String.format("Hey there, %s. It looks like you are an admin. %d", user.name, user.id)
+        return String.format("Hey there, %s. It looks like you are an admin. %d", user.name, user.getId())
     }
 
 }

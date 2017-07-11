@@ -17,13 +17,13 @@ class ProtectedResource {
     @PermitAll
     @GET
     fun showSecret(@Auth user: User): String {
-        return String.format("Hey there, %s. You know the secret! %d", user.name, user.id)
+        return String.format("Hey there, %s. You know the secret! %d", user.name, user.getId())
     }
 
     @RolesAllowed("ADMIN")
     @GET
     @Path("admin")
     fun showAdminSecret(@Auth user: User): String {
-        return String.format("Hey there, %s. It looks like you are an admin. %d", user.name, user.id)
+        return String.format("Hey there, %s. It looks like you are an admin. %d", user.name, user.getId())
     }
 }
