@@ -2,8 +2,7 @@ package com.example.helloworld.health
 
 import com.codahale.metrics.health.HealthCheck
 import com.example.helloworld.core.Template
-
-import java.util.Optional
+import java.util.*
 
 class TemplateHealthCheck(private val template: Template) : HealthCheck() {
 

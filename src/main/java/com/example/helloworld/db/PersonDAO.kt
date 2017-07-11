@@ -4,7 +4,7 @@ import com.example.helloworld.core.Person
 import io.dropwizard.hibernate.AbstractDAO
 import org.hibernate.SessionFactory
 import org.hibernate.query.Query
-import java.util.Optional
+import java.util.*
 
 open class PersonDAO(factory: SessionFactory) : AbstractDAO<Person>(factory) {
 

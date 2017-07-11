@@ -15,7 +15,7 @@ import javax.ws.rs.core.MediaType
 
 @Path("/hello-world")
 @Produces(MediaType.APPLICATION_JSON)
-class HelloWorldResource(val template: Template) {
+class HelloWorldResource(private val template: Template) {
     private val LOGGER = LoggerFactory.getLogger(HelloWorldResource::class.java)
     private val counter = AtomicLong()
 
@@ -34,7 +34,7 @@ class HelloWorldResource(val template: Template) {
     @GET
     @Path("/date")
     @Produces(MediaType.TEXT_PLAIN)
-    fun receiveDate(@QueryParam("date") dateTimeParam: Optional<DateTimeParam> ): String? {
+    fun receiveDate(@QueryParam("date") dateTimeParam: Optional<DateTimeParam>): String? {
         if (dateTimeParam.isPresent) {
             val actualDateTimeParam = dateTimeParam.get()
             LOGGER.info("Received a date: {}", actualDateTimeParam)

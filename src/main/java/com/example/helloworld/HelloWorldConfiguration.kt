@@ -11,11 +11,11 @@ import javax.validation.constraints.NotNull
 class HelloWorldConfiguration : Configuration() {
     @NotEmpty
     @JsonProperty
-    lateinit var template: String
+    private lateinit var template: String
 
     @NotEmpty
     @JsonProperty
-    val defaultName = "Stranger"
+    private val defaultName = "Stranger"
 
     @Valid
     @NotNull

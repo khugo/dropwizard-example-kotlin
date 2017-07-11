@@ -1,16 +1,13 @@
 package com.example.helloworld.cli
 
 import com.example.helloworld.HelloWorldConfiguration
-import com.example.helloworld.core.Template
 import io.dropwizard.cli.ConfiguredCommand
 import io.dropwizard.setup.Bootstrap
 import net.sourceforge.argparse4j.impl.Arguments
 import net.sourceforge.argparse4j.inf.Namespace
 import net.sourceforge.argparse4j.inf.Subparser
-import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-
-import java.util.Optional
+import java.util.*
 
 class RenderCommand : ConfiguredCommand<HelloWorldConfiguration>("render", "Render the template data to console") {
     override fun configure(subparser: Subparser) {
